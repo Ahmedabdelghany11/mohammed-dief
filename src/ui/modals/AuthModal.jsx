@@ -41,7 +41,7 @@ function AuthModal({ show, setShow, type, protectedFlag = false }) {
               loading="lazy"
               className="bg-img"
               alt="auth-banner"
-              src="/images/auth-benner.png"
+              src="/images/auth-1.jpg"
             />
           </div>
           <div className="form_wrapper">

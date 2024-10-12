@@ -8,14 +8,19 @@ import AppLayout from "./ui/layout/AppLayout";
 
 function App() {
   return (
-    <AppLayout>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </BrowserRouter>
-    </AppLayout>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <AppLayout>
+              <Home />
+            </AppLayout>
+          }
+        />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

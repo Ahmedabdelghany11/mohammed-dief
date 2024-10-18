@@ -25,70 +25,35 @@ function Header() {
 
   return (
     <>
-      <header style={{ background: "#4381f8", color: "#fff" }}>
-        <div
-          className="container d-flex align-items-center py-2 px-1"
-          style={{ gap: "24px" }}
-        >
-          <Link to="/" className="logo-wrapper d-flex align-items-center gap-2">
+      <header>
+        <div className="container">
+          <Link to="/" className="logo-wrapper">
             <div className="logo-img">
-              {/* <img src="" alt="" /> */}
-              <h1
-                style={{
-                  color: "#fff",
-                  fontSize: "72px",
-                  fontWeight: "800",
-                  lineHeight: "1",
-                }}
-              >
-                M
-              </h1>
+              <img src="/icons/fav.svg" alt="Mohammed Deif" />
             </div>
-            <div className="logo-title d-flex flex-column">
-              <h4 className="title" style={{ color: "#fff", lineHeight: "1" }}>
-                {t("appTitle")}
-              </h4>
-              <h6
-                className="sub-title"
-                style={{ color: "#fff", lineHeight: "1" }}
-              >
-                {t("appSubtitle")}
-              </h6>
+            <div className="logo-title">
+              <span className="title">{t("appTitle")}</span>
+              <span className="sub-title">{t("appSubtitle")}</span>
             </div>
           </Link>
-          <nav
-            className="navbar-menu d-flex align-items-center gap-4"
-            style={{ flex: "1 0" }}
-          >
-            <NavLink to="/" className="nav-item" style={{ color: "#fff" }}>
+          <nav className="navbar-menu">
+            <NavLink to="/" className="nav-item">
               {t("navbar.home")}
             </NavLink>
-            <NavLink
-              to="/products"
-              className="nav-item"
-              style={{ color: "#fff" }}
-            >
+            <NavLink to="/products" className="nav-item">
               {t("navbar.products")}
             </NavLink>
-            <NavLink
-              to="/orders"
-              className="nav-item"
-              style={{ color: "#fff" }}
-            >
+            <NavLink to="/orders" className="nav-item">
               {t("navbar.orders")}
             </NavLink>
-            <NavLink
-              to="/dashboard"
-              className="nav-item"
-              style={{ color: "#fff" }}
-            >
+            <NavLink to="/dashboard" className="nav-item">
               {t("navbar.dashboard")}
             </NavLink>
-            <NavLink to="/about" className="nav-item" style={{ color: "#fff" }}>
+            <NavLink to="/about" className="nav-item">
               {t("navbar.about")}
             </NavLink>
           </nav>
-          <div className="icons-wrapper d-flex align-items-center gap-2">
+          <div className="icons-wrapper ">
             {/* Language */}
             <Dropdown>
               <Dropdown.Toggle id="dropdown-basic" className="link">

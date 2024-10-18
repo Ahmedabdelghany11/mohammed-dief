@@ -52,6 +52,7 @@ $main: #4381f8;
 $main10: #4381f81a;
 $main30: #4381f84d;
 $main60: #4381f89a;
+$main80: #4381f8cc;
 $white: #fff;
 $black: #000;
 $starColor: #ffd500;
@@ -59,6 +60,7 @@ $LightGray: #d9d9d9;
 $textColor: #777777;
 $textSecondaryColor: #6b6464;
 $inputHint: #aaaaaa;
+$inputStroke: #f2f2f2;
 $border: #38383a;
 $inputBg: #fafafa;
 $grayBackground: #f4f4f4;
@@ -113,6 +115,15 @@ input[type="number"] {
 
 hr {
   margin: 0.5rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 .tooltip {

@@ -2,7 +2,11 @@
 
 body {
   overflow-x: hidden;
-  // direction: rtl;
+  direction: rtl;
   font-family: "Baloo Bhaijaan 2", sans-serif;
   @import "./form-ui";
+
+  &.en {
+    direction: ltr;
+  }
 }

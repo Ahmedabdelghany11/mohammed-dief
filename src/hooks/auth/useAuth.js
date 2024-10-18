@@ -42,7 +42,8 @@ function useAuth() {
   } = useGetAuthedUser(Boolean(token && id && !isExpired));
 
   useEffect(() => {
-    if (isExpired || Number(decodedToken?.sub) !== Number(id)) {
+    if (isExpired) {
+      // Number(decodedToken?.sub) !== Number(id)
       dispatch(setUser({}));
       removeCookie("token");
       removeCookie("id");

@@ -1,10 +1,8 @@
 import { useLayoutEffect } from "react";
 import { useCookies } from "react-cookie";
-import { useDispatch } from "react-redux";
 import axiosInstance from "./utilities/axiosInstance";
-import { setUser } from "./redux/slices/userSlice";
 
-const setupAxiosInterceptors = (setCookie, token, removeCookie, dispatch) => {
+const setupAxiosInterceptors = (setCookie, token) => {
   axiosInstance.interceptors.response.use(
     (res) => res,
     async (err) => {
@@ -14,14 +12,35 @@ const setupAxiosInterceptors = (setCookie, token, removeCookie, dispatch) => {
         originalRequest._retry = true;
 
         if (!token) {
-          delete axiosInstance.defaults.headers.common.Authorization;
-          dispatch(setUser({}));
           return Promise.reject(err);
         }
 
-        // No token refresh logic (since you don't have refresh tokens)
+        try {
+          delete axiosInstance.defaults.headers.common.Authorization;
+          const res = await axiosInstance.get("/Identity/UserData");
 
-        return Promise.reject(err);
+          if (res.status === 200) {
+            const newToken = res.data.data.token;
+
+            setCookie("token", newToken, {
+              path: "/",
+              secure: true,
+              sameSite: "Strict",
+            });
+
+            axiosInstance.defaults.headers.common[
+              "Authorization"
+            ] = `Bearer ${newToken}`;
+            originalRequest.headers["Authorization"] = `Bearer ${newToken}`;
+
+            return axiosInstance(originalRequest);
+          } else {
+            throw new Error("Token refresh failed");
+          }
+        } catch (error) {
+          console.error("Token refresh error:", error);
+          return Promise.reject(err);
+        }
       }
 
       return Promise.reject(err);
@@ -30,14 +49,12 @@ const setupAxiosInterceptors = (setCookie, token, removeCookie, dispatch) => {
 };
 
 const InterceptorProvider = ({ children }) => {
-  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+  const [cookies, setCookie] = useCookies(["token"]);
   const { token } = cookies;
 
-  const dispatch = useDispatch();
-
   useLayoutEffect(() => {
-    setupAxiosInterceptors(setCookie, token, removeCookie, dispatch);
-  }, [setCookie, token, removeCookie, dispatch]);
+    setupAxiosInterceptors(setCookie, token);
+  }, [setCookie, token]);
 
   return <>{children}</>;
 };

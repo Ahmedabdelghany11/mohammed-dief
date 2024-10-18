@@ -339,6 +339,7 @@ input[type=checkbox]:checked::after {
 
 body {
   overflow-x: hidden;
+  direction: rtl;
   font-family: "Baloo Bhaijaan 2", sans-serif;
 }
 body .form {
@@ -841,4 +842,7 @@ body .wizard_tabs .wizard_tab.active .step_no {
 }
 body .wizard_tabs .wizard_tab.active h6 {
   color: #4381f8;
+}
+body.en {
+  direction: ltr;
 }/*# sourceMappingURL=style.css.map */

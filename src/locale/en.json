@@ -1,0 +1,15 @@
+{
+  "appTitle": "Mohammed Dief",
+  "appSubtitle": "For medical products",
+  "auth": {
+    "login": "Login",
+    "register": "Register"
+  },
+  "navbar": {
+    "home": "Home",
+    "products": "Products",
+    "orders": "Orders",
+    "dashboard": "Dashboard",
+    "about": "About Us"
+  }
+}

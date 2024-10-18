@@ -15,6 +15,7 @@ import ErrorFallback from "./routes/ErrorFallback.jsx";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
 import InterceptorProvider from "./InterceptorProvider.jsx";
+import { BrowserRouter } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
@@ -23,14 +24,16 @@ createRoot(document.getElementById("root")).render(
     FallbackComponent={ErrorFallback}
     onReset={() => window.location.replace("/")}
   >
-    <Provider store={store}>
-      <QueryClientProvider client={queryClient}>
-        <InterceptorProvider>
-          <App />
-        </InterceptorProvider>
-        <ToastContainer />
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <QueryClientProvider client={queryClient}>
+          <InterceptorProvider>
+            <App />
+          </InterceptorProvider>
+          <ToastContainer autoClose={2000} />
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </Provider>
+    </BrowserRouter>
   </ErrorBoundary>
 );

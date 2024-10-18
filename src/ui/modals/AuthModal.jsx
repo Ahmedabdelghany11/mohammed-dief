@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
-import { Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { Modal } from "react-bootstrap";
+import useAuth from "../../hooks/auth/useAuth";
 import Login from "../../features/auth/authentication/Login";
 import Register from "../../features/auth/authentication/Register";
-import useAuth from "../../hooks/auth/useAuth";
+import ForgetPassword from "../../features/auth/authentication/ForgetPassword";
+import OTPConfirm from "../../features/auth/authentication/OTPConfirm";
+import ResetPassword from "../../features/auth/authentication/ResetPassword";
 
-function AuthModal({ show, setShow, type, protectedFlag = false }) {
+export default function AuthModal({ show, setShow, type, protectedFlag }) {
   const [formType, setFormType] = useState("login");
   const { isAuthed } = useAuth();
+
+  const [otpCode, setOtpCode] = useState("");
 
   const navigate = useNavigate();
 
@@ -21,6 +26,7 @@ function AuthModal({ show, setShow, type, protectedFlag = false }) {
     } else {
       setShow(false);
     }
+    setFormType("login");
   };
 
   return (
@@ -41,7 +47,7 @@ function AuthModal({ show, setShow, type, protectedFlag = false }) {
               loading="lazy"
               className="bg-img"
               alt="auth-banner"
-              src="/images/auth-1.jpg"
+              src="/images/auth-benner.png"
             />
           </div>
           <div className="form_wrapper">
@@ -51,11 +57,26 @@ function AuthModal({ show, setShow, type, protectedFlag = false }) {
             {formType === "register" && (
               <Register setFormType={setFormType} setShow={setShow} />
             )}
+            {formType === "forget" && (
+              <ForgetPassword
+                setFormType={setFormType}
+                setShow={setShow}
+                setOtpCode={setOtpCode}
+              />
+            )}
+            {formType === "otp" && (
+              <OTPConfirm
+                setFormType={setFormType}
+                setShow={setShow}
+                otpCode={otpCode}
+              />
+            )}
+            {formType === "reset" && (
+              <ResetPassword setFormType={setFormType} setShow={setShow} />
+            )}
           </div>
         </section>
       </Modal.Body>
     </Modal>
   );
 }
-
-export default AuthModal;

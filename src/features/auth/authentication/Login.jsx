@@ -10,7 +10,12 @@ import PasswordField from "../../../ui/form-elements/PasswordField";
 import SubmitButton from "../../../ui/form-elements/SubmitButton";
 import { handleChange } from "../../../utilities/helpers";
 import axiosInstance from "../../../utilities/axiosInstance";
-import { setUser } from "../../../redux/slices/userSlice";
+import {
+  logout,
+  setIsLogged,
+  setRoles,
+  setUser,
+} from "../../../redux/slices/userSlice";
 
 function Login({ setFormType, setShow }) {
   const { t } = useTranslation();
@@ -54,20 +59,23 @@ function Login({ setFormType, setShow }) {
         const userDataReq = await axiosInstance.get("/Identity/UserData");
 
         if (userDataReq.status === 200) {
-          dispatch(setUser(userDataReq.data?.data));
+          dispatch(setUser(userDataReq.data?.data?.user));
+          dispatch(setIsLogged(true));
+          dispatch(setRoles(userDataReq.data?.data?.roles));
           setCookie("id", userDataReq.data?.data.user.id, {
             path: "/",
             secure: import.meta.env.MODE === "production",
             sameSite: "Strict",
             maxAge: 86400, // 1-day expiration for the user ID
           });
-          toast.success(res.data?.message);
+          toast.success(t("auth.loginSuccess"));
           const updatedParams = new URLSearchParams(searchParams);
           updatedParams.delete("redirect");
           setSearchParams(updatedParams);
           setShow(false);
         } else {
-          // removeCookie("token");
+          dispatch(logout());
+          removeCookie("token");
           removeCookie("id");
           throw new Error(userDataReq.data.message);
         }

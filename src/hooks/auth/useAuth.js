@@ -4,13 +4,21 @@ import { useDispatch } from "react-redux";
 import axiosInstance from "../../utilities/axiosInstance";
 import { jwtDecode } from "jwt-decode";
 
-import { setUser } from "../../redux/slices/userSlice";
+import {
+  logout,
+  setIsLogged,
+  setRoles,
+  setUser,
+} from "../../redux/slices/userSlice";
+
+import { useSearchParams } from "react-router-dom";
 
 function useAuth() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [isAuthed, setIsAuthed] = useState(false);
-  const [cookies, , removeCookie] = useCookies(["token", "id"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["token", "id"]);
   const { token, id } = cookies;
 
   const { decodedToken, isExpired } = useMemo(() => {
@@ -27,19 +35,43 @@ function useAuth() {
   }, [token]);
 
   useEffect(() => {
+    async function fetchData() {
+      const userDataReq = await axiosInstance.get("/Identity/UserData");
+
+      if (userDataReq.status === 200) {
+        dispatch(setUser(userDataReq.data?.data?.user));
+        dispatch(setIsLogged(true));
+        dispatch(setRoles(userDataReq.data?.data?.roles));
+        setCookie("id", userDataReq.data?.data.user.id, {
+          path: "/",
+          secure: import.meta.env.MODE === "production",
+          sameSite: "Strict",
+          maxAge: 86400, // 1-day expiration for the user ID
+        });
+
+        const updatedParams = new URLSearchParams(searchParams);
+        updatedParams.delete("redirect");
+        setSearchParams(updatedParams);
+      } else {
+        dispatch(logout());
+        removeCookie("token");
+        removeCookie("id");
+        throw new Error(userDataReq.data.message);
+      }
+    }
     if (token) {
+      fetchData();
       setIsAuthed(true);
       axiosInstance.defaults.headers.common[
         "Authorization"
       ] = `bearer ${token}`;
     }
-  }, [token]);
+  }, [dispatch, removeCookie, searchParams, setCookie, setSearchParams, token]);
 
   useEffect(() => {
     if (isExpired) {
       // ||  decodedToken?.uid === id
-      console.log("isExpired in", isExpired);
-      dispatch(setUser({}));
+      dispatch(logout());
       removeCookie("token");
       removeCookie("id");
       setLoading(false);

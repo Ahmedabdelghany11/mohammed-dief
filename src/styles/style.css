@@ -1067,6 +1067,83 @@ body header .container .icons-wrapper .dropdown:has(.text) .dropdown-menu .dropd
 body header .container .icons-wrapper .dropdown:has(.text) .dropdown-menu .dropdown-item:hover img {
   filter: brightness(0) invert(1);
 }
+body .confirm-delete p {
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+body .confirm-delete p span {
+  color: red;
+  font-weight: 600;
+}
+body .confirm-delete .cancel-btn {
+  border: 1px solid #f2f2f2;
+  color: #000;
+  width: 100%;
+  outline: none;
+  background: none;
+  padding: 12px;
+  border-radius: 12px;
+}
+body .confirm-delete .delete-btn {
+  width: 100%;
+  padding: 8px;
+  background: rgb(255, 0, 0);
+  color: #fff;
+  border-radius: 12px;
+  border: 0;
+  outline: none;
+}
+body .confirm-delete.other .delete-btn {
+  background: #4381f8;
+}
+body .drop_Message_Menu {
+  z-index: 999;
+  min-width: 350px;
+  padding: 0;
+  height: 300px;
+  flex-direction: column;
+}
+body .drop_Message_Menu .scroll_menu {
+  overflow-y: scroll;
+  flex: 1 1 auto;
+  scrollbar-width: none;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+body .drop_Message_Menu .scroll_menu .drop_Message {
+  width: 100%;
+}
+body .drop_Message_Menu .scroll_menu .drop_Message .image-wrapper {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 32px;
+  aspect-ratio: 1;
+  background-color: rgba(67, 129, 248, 0.1019607843);
+}
+body .drop_Message_Menu .scroll_menu .drop_Message .image-wrapper i {
+  font-size: 16px;
+  color: #4381f8;
+}
+body .drop_Message_Menu .scroll_menu .drop_Message p {
+  margin: 0;
+  text-align: start;
+}
+body .drop_Message_Menu .showall {
+  width: 100%;
+  text-align: center;
+  color: #4381f8;
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 4px;
+  background: #fafafa;
+}
 body.en {
   direction: ltr;
 }/*# sourceMappingURL=style.css.map */

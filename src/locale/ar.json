@@ -3,7 +3,11 @@
   "appSubtitle": "للمستلزمات الطبية",
   "auth": {
     "login": "تسجيل الدخول",
-    "register": "تسجيل حساب جديد"
+    "loginSuccess": "تم تسجيل الدخول بنجاح",
+    "register": "تسجيل حساب جديد",
+    "logout": "تسجيل الخروج",
+    "logoutSuccess": "تم تسجيل الخروج بنجاح",
+    "areYouSureYouWantToLogout": "هل أنت متأكد من رغبتك بتسجيل الخروج؟"
   },
   "navbar": {
     "home": "الرئيسية",
@@ -12,5 +16,6 @@
     "dashboard": "لوحة التحكم",
     "about": "من نحن"
   },
-  "somethingWentWrong": "حدث خطأ ما"
+  "somethingWentWrong": "حدث خطأ ما",
+  "cancel": "إلغاء"
 }

@@ -242,6 +242,89 @@ body {
     }
   }
 
+  .confirm-delete {
+    p {
+      color: $black;
+      font-size: 16px;
+      margin-bottom: 24px;
+      span {
+        color: red;
+        font-weight: 600;
+      }
+    }
+    .cancel-btn {
+      border: 1px solid $inputStroke;
+      color: $black;
+      width: 100%;
+      outline: none;
+      background: none;
+      padding: 12px;
+      border-radius: 12px;
+    }
+    .delete-btn {
+      width: 100%;
+      padding: 8px;
+      background: rgb(255, 0, 0);
+      color: $white;
+      border-radius: 12px;
+      border: 0;
+      outline: none;
+    }
+    &.other {
+      .delete-btn {
+        background: $main;
+      }
+    }
+  }
+
+  .drop_Message_Menu {
+    z-index: 999;
+    min-width: 350px;
+    padding: 0;
+    height: 300px;
+    flex-direction: column;
+    .scroll_menu {
+      overflow-y: scroll;
+      flex: 1 1 auto;
+      scrollbar-width: none;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .drop_Message {
+        width: 100%;
+        .image-wrapper {
+          align-items: center;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          overflow: hidden;
+          position: relative;
+          width: 32px;
+          aspect-ratio: 1;
+          background-color: #4381f81a;
+          i {
+            font-size: 16px;
+            color: $main;
+          }
+        }
+        p {
+          margin: 0;
+          text-align: start;
+        }
+      }
+    }
+    .showall {
+      width: 100%;
+      text-align: center;
+      color: $main;
+      font-size: 14px;
+      padding: 12px;
+      border-radius: 4px;
+      background: $inputBg;
+    }
+  }
+
   &.en {
     direction: ltr;
   }

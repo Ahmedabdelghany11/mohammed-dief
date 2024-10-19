@@ -40,7 +40,7 @@ function Login({ setFormType, setShow }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-  
+
     try {
       const res = await axiosInstance.post("/Identity/Token", {
         ...formData,
@@ -48,12 +48,11 @@ function Login({ setFormType, setShow }) {
       if (res.status === 200) {
         setCookie("token", res.data?.data.token, {
           path: "/",
-          secure: import.meta.env.MODE === "production", // Secure only in production
-          sameSite: "Strict", 
-          maxAge: 86400, // 1-day expiration for the token
+          secure: true,
+          sameSite: "Strict",
         });
         const userDataReq = await axiosInstance.get("/Identity/UserData");
-  
+
         if (userDataReq.status === 200) {
           dispatch(setUser(userDataReq.data?.data));
           setCookie("id", userDataReq.data?.data.user.id, {
@@ -68,7 +67,7 @@ function Login({ setFormType, setShow }) {
           setSearchParams(updatedParams);
           setShow(false);
         } else {
-          removeCookie("token");
+          // removeCookie("token");
           removeCookie("id");
           throw new Error(userDataReq.data.message);
         }
@@ -79,7 +78,6 @@ function Login({ setFormType, setShow }) {
       setLoading(false);
     }
   };
-  
 
   return (
     <form className="form" onSubmit={handleSubmit}>

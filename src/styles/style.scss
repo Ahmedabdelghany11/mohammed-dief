@@ -5,6 +5,11 @@ body {
   direction: rtl;
   font-family: "Baloo Bhaijaan 2", sans-serif;
   @import "./form-ui";
+  min-height: 100dvh;
+
+  #root {
+    height: 100%;
+  }
 
   header {
     position: sticky;
@@ -139,6 +144,7 @@ body {
             flex-direction: column;
             border-radius: 12px;
             border: 1px solid $inputStroke;
+
             @keyframes fadeIn {
               from {
                 opacity: 0;
@@ -160,8 +166,13 @@ body {
             display: flex;
             align-items: center;
             gap: 8px;
+            transition: $transition;
             &:active {
               background: none !important;
+            }
+            &:hover {
+              background-color: $main10 !important;
+              color: $main;
             }
             img {
               height: 16px;

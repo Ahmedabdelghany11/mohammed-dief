@@ -350,6 +350,7 @@ body {
   overflow-x: hidden;
   direction: rtl;
   font-family: "Baloo Bhaijaan 2", sans-serif;
+  min-height: 100dvh;
 }
 body .form {
   display: flex;
@@ -852,6 +853,9 @@ body .wizard_tabs .wizard_tab.active .step_no {
 body .wizard_tabs .wizard_tab.active h6 {
   color: #4381f8;
 }
+body #root {
+  height: 100%;
+}
 body header {
   position: sticky;
   top: 0;
@@ -993,9 +997,14 @@ body header .container .icons-wrapper .dropdown .dropdown-item {
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: all 0.2s ease-in-out;
 }
 body header .container .icons-wrapper .dropdown .dropdown-item:active {
   background: none !important;
+}
+body header .container .icons-wrapper .dropdown .dropdown-item:hover {
+  background-color: rgba(67, 129, 248, 0.1019607843) !important;
+  color: #4381f8;
 }
 body header .container .icons-wrapper .dropdown .dropdown-item img {
   height: 16px;

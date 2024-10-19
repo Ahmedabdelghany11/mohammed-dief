@@ -3,7 +3,7 @@ import { useCookies } from "react-cookie";
 import { useDispatch } from "react-redux";
 import axiosInstance from "../../utilities/axiosInstance";
 import { jwtDecode } from "jwt-decode";
-import useGetAuthedUser from "./useGetAuthedUser";
+
 import { setUser } from "../../redux/slices/userSlice";
 
 function useAuth() {
@@ -15,10 +15,9 @@ function useAuth() {
 
   const { decodedToken, isExpired } = useMemo(() => {
     if (!token) return { decodedToken: null, isExpired: true };
-
     try {
-      const decoded = jwtDecode(token);
       const currentTime = Date.now() / 1000;
+      const decoded = jwtDecode(token);
       const expired = decoded.exp < currentTime;
       return { decodedToken: decoded, isExpired: expired };
     } catch (err) {
@@ -29,62 +28,28 @@ function useAuth() {
 
   useEffect(() => {
     if (token) {
+      setIsAuthed(true);
       axiosInstance.defaults.headers.common[
         "Authorization"
       ] = `bearer ${token}`;
     }
   }, [token]);
 
-  const {
-    data: profile,
-    isFetched,
-    refetch,
-  } = useGetAuthedUser(Boolean(token && id && !isExpired));
-
   useEffect(() => {
     if (isExpired) {
-      // Number(decodedToken?.sub) !== Number(id)
+      // ||  decodedToken?.uid === id
+      console.log("isExpired in", isExpired);
       dispatch(setUser({}));
       removeCookie("token");
       removeCookie("id");
       setLoading(false);
       setIsAuthed(false);
       return;
+    } else {
+      setLoading(false);
+      setIsAuthed(true);
     }
-
-    const fetchProfile = async () => {
-      try {
-        if (isFetched) {
-          if (profile) {
-            dispatch(setUser(profile));
-            setIsAuthed(true);
-          } else {
-            console.log("Profile data not available, refetching...");
-            await refetch();
-          }
-        } else {
-          await refetch();
-        }
-      } catch (error) {
-        console.error("Error fetching profile:", error);
-        setIsAuthed(false);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProfile();
-  }, [
-    token,
-    id,
-    isExpired,
-    isFetched,
-    refetch,
-    profile,
-    removeCookie,
-    dispatch,
-    decodedToken?.sub,
-  ]);
+  }, [decodedToken?.uid, dispatch, id, isExpired, removeCookie]);
 
   return { loading, isAuthed };
 }

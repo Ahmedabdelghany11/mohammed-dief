@@ -14,8 +14,12 @@
     "products": "المنتجات",
     "orders": "الطلبات",
     "dashboard": "لوحة التحكم",
-    "about": "من نحن"
+    "about": "من نحن",
+    "profile": "الملف الشخصي",
+    "editProfile": "تعديل الملف الشخصي",
+    "requests": "الطلبات"
   },
+
   "somethingWentWrong": "حدث خطأ ما",
   "cancel": "إلغاء"
 }

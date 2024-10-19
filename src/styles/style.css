@@ -855,6 +855,7 @@ body .wizard_tabs .wizard_tab.active h6 {
 }
 body #root {
   height: 100%;
+  min-height: 100dvh;
 }
 body header {
   position: sticky;
@@ -1010,6 +1011,13 @@ body header .container .icons-wrapper .dropdown .dropdown-item img {
   height: 16px;
   width: 16px;
 }
+body header .container .icons-wrapper .dropdown .dropdown-item i {
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 16px;
+}
 body header .container .icons-wrapper .dropdown .dropdown-item a {
   width: 100%;
   color: #000;
@@ -1096,6 +1104,36 @@ body .confirm-delete .delete-btn {
 }
 body .confirm-delete.other .delete-btn {
   background: #4381f8;
+}
+body .drop_profile_Menu {
+  z-index: 999;
+  padding: 8px 0;
+  flex-direction: column;
+  min-width: 240px !important;
+}
+body .drop_profile_Menu:has(.menu-header) {
+  padding-top: 0 !important;
+}
+body .drop_profile_Menu .menu-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  gap: 4px !important;
+  position: relative;
+  border-bottom: 1px solid #efefef;
+  margin-bottom: 8px !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+body .drop_profile_Menu .menu-header .name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+body .drop_profile_Menu .menu-header .sub {
+  font-size: 12px;
+  font-weight: 400;
+  color: #777777;
 }
 body .drop_Message_Menu {
   z-index: 999;

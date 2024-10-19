@@ -26,6 +26,7 @@ function Header() {
 
   const user = useSelector((state) => state.user.user);
   const isLogged = useSelector((state) => state.user.isLogged);
+  const roles = useSelector((state) => state.user.roles);
 
   const queryClient = useQueryClient();
   const dispatch = useDispatch();
@@ -133,11 +134,40 @@ function Header() {
                   alt=""
                 />
               </Dropdown.Toggle>
-              <Dropdown.Menu className="drop_Message_Menu">
+              <Dropdown.Menu className="drop_profile_Menu">
                 {isLogged ? (
-                  <Dropdown.Item onClick={() => setShowLogoutModal(true)}>
-                    {t("auth.logout")}
-                  </Dropdown.Item>
+                  <>
+                    <Dropdown.Item
+                      as={Link}
+                      to="/profile"
+                      className="menu-header"
+                    >
+                      <span className="name">
+                        {user?.firstName} {user?.lastName}
+                      </span>
+                      <span className="sub">{user?.email}</span>
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/edit-profile">
+                      <i className="fa-solid fa-pen-to-square"></i>
+                      {t("navbar.editProfile")}
+                    </Dropdown.Item>
+                    {roles?.includes("Admin") ? (
+                      <>
+                        <Dropdown.Item as={Link} to="/dashboard">
+                          <i className="fa-solid fa-gauge"></i>
+                          {t("navbar.dashboard")}
+                        </Dropdown.Item>
+                        <Dropdown.Item as={Link} to="/requests">
+                        <i className="fa-solid fa-receipt"></i>
+                          {t("navbar.requests")}
+                        </Dropdown.Item>
+                      </>
+                    ) : null}
+                    <Dropdown.Item onClick={() => setShowLogoutModal(true)}>
+                      <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                      {t("auth.logout")}
+                    </Dropdown.Item>
+                  </>
                 ) : (
                   <>
                     <Dropdown.Item
@@ -146,6 +176,7 @@ function Header() {
                         setShowAuthModal(true);
                       }}
                     >
+                      <i className="fa-solid fa-user-plus"></i>
                       {t("auth.register")}
                     </Dropdown.Item>
                     <Dropdown.Item
@@ -154,6 +185,7 @@ function Header() {
                         setShowAuthModal(true);
                       }}
                     >
+                      <i className="fa-solid fa-arrow-right-to-bracket"></i>
                       {t("auth.login")}
                     </Dropdown.Item>
                   </>

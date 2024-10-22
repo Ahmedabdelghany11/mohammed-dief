@@ -853,11 +853,8 @@ body .wizard_tabs .wizard_tab.active .step_no {
 body .wizard_tabs .wizard_tab.active h6 {
   color: #4381f8;
 }
-body #root {
-  height: 100%;
-  min-height: 100dvh;
-}
 body header {
+  background-color: #fefefe;
   position: sticky;
   top: 0;
   right: 0;
@@ -940,6 +937,28 @@ body header .container .icons-wrapper {
   align-items: center;
   gap: 8px;
   position: relative;
+}
+body header .container .icons-wrapper .dropdown-icon:hover .count {
+  background-color: #fafafa;
+  color: #4381f8;
+}
+body header .container .icons-wrapper .dropdown-icon .count {
+  width: 20px;
+  aspect-ratio: 1/1;
+  padding: 2px;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #4381f8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #4381f8;
+  z-index: 20;
 }
 body header .container .icons-wrapper .dropdown {
   position: relative !important;
@@ -1074,6 +1093,145 @@ body header .container .icons-wrapper .dropdown:has(.text) .dropdown-menu .dropd
 }
 body header .container .icons-wrapper .dropdown:has(.text) .dropdown-menu .dropdown-item:hover img {
   filter: brightness(0) invert(1);
+}
+body footer {
+  padding-top: 60px;
+  position: relative;
+  border-top: 1px solid #f2f2f2;
+  background-color: #fefefe;
+}
+body footer .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+body footer .logo img {
+  height: 56px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body footer .logo .logo-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+body footer .logo .logo-title span {
+  color: #4381f8;
+  position: relative;
+  line-height: 1;
+}
+body footer .logo .logo-title span.title {
+  font-size: 18px;
+  font-weight: 800;
+}
+body footer .logo .logo-title span.sub-title {
+  font-size: 12px;
+  font-weight: 600;
+}
+body footer .social_media {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 42px;
+}
+body footer .social_media a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f2f2f2;
+  background-color: rgba(67, 129, 248, 0.1019607843);
+  color: #4381f8;
+  font-size: 14px;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+body footer .social_media a:hover {
+  transform: translateY(-4px);
+  background-color: #4381f8;
+  color: #fff;
+}
+body footer .copy_rights {
+  margin-top: 32px;
+  padding: 16px 0;
+  border-top: 1px solid #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body footer .copy_rights h6 {
+  font-size: 16x;
+  color: #4381f8;
+}
+body footer .copy_rights a {
+  color: #4381f8;
+  transition: all 0.2s ease-in-out;
+  font-size: 16px;
+}
+body footer .copy_rights .links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+body footer .footer_title {
+  color: #4381f8;
+  margin-bottom: 32px;
+  font-size: 28px;
+  position: relative;
+}
+body footer .footer_title::after {
+  content: "";
+  height: 1px;
+  width: 100px;
+  background: radial-gradient(90% 100% at 0% 50%, rgba(67, 129, 248, 0.1019607843) 0%, rgba(67, 129, 248, 0.6039215686) 100%);
+  position: absolute;
+  bottom: -12px;
+  right: 0;
+}
+@media screen and (max-width: 576px) {
+  body footer .footer_title {
+    margin-top: 32px;
+  }
+}
+body footer .footer_links {
+  display: flex;
+  flex-direction: column;
+}
+body footer .footer_links .footer_link {
+  min-width: 170px;
+}
+body footer .footer_links .footer_link:hover span {
+  width: 16px;
+}
+body footer .footer_links .footer_link span {
+  transition: all 0.2s ease-in-out;
+  width: 0;
+  overflow: hidden;
+}
+body footer .footer_link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #4381f8;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 12px;
+}
+body .landing {
+  width: 100%;
+  background-color: #fefefe;
+}
+body #root {
+  height: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: space-between;
+}
+body main {
+  flex: 1 1 auto;
 }
 body .confirm-delete p {
   color: #000;

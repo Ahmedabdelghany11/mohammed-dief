@@ -1,15 +1,33 @@
 {
-  "appTitle": "Mohammed Dief",
-  "appSubtitle": "For medical products",
   "auth": {
     "login": "Login",
-    "register": "Register"
+    "loginSuccess": "Logged in successfully",
+    "register": "Register",
+    "registerSuccess": "Registered successfully",
+    "logout": "Logout",
+    "logoutSuccess": "Logged out successfully",
+    "areYouSureYouWantToLogout": "Are you sure you want to logout?"
   },
   "navbar": {
     "home": "Home",
     "products": "Products",
     "orders": "Orders",
     "dashboard": "Dashboard",
-    "about": "About Us"
-  }
+    "about": "About Us",
+    "profile": "Profile",
+    "editProfile": "Edit Profile",
+    "requests": "Requests",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "contactUs": "Contact Us"
+  },
+  "footer": {
+    "importantLinks": "روابط مهمة",
+    "copyright": "All rights reserved for"
+  },
+  "appTitle": "Mohammed Dief",
+  "appSubtitle": "For medical products",
+  "showAllNotifications": "Show all notifications",
+  "somethingWentWrong": "Something went wrong",
+  "cancel": "Cancel"
 }

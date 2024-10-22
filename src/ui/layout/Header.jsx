@@ -110,25 +110,21 @@ function Header() {
 
             {/* Notification */}
             <Dropdown>
-              <Dropdown.Toggle id="dropdown-basic" className="link">
+              <Dropdown.Toggle id="dropdown-basic" className="dropdown-icon">
                 <img src="/icons/bell.svg" alt="" />
-                {/* {<span className="count"> 2 </span>} */}
+                <span className="count"> 2 </span>
               </Dropdown.Toggle>
               <Dropdown.Menu className="drop_Message_Menu">
                 <div className="scroll_menu"></div>
-                <Link
-                  className="showall"
-                  to="/notifications"
-                  style={{ textDecoration: "none" }}
-                >
-                  عرض جميع الاشعارات
+                <Link className="showall" to="/notifications">
+                  {t("showAllNotifications")}
                 </Link>
               </Dropdown.Menu>
             </Dropdown>
 
             {/* Profile */}
             <Dropdown>
-              <Dropdown.Toggle id="dropdown-basic" className="link">
+              <Dropdown.Toggle id="dropdown-basic" className="dropdown-icon">
                 <img
                   src={`${user?.image ? user.image : "/icons/user.svg"}`}
                   alt=""
@@ -158,7 +154,7 @@ function Header() {
                           {t("navbar.dashboard")}
                         </Dropdown.Item>
                         <Dropdown.Item as={Link} to="/requests">
-                        <i className="fa-solid fa-receipt"></i>
+                          <i className="fa-solid fa-receipt"></i>
                           {t("navbar.requests")}
                         </Dropdown.Item>
                       </>

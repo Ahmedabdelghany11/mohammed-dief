@@ -1,10 +1,9 @@
 {
-  "appTitle": "محمد ضيف",
-  "appSubtitle": "للمستلزمات الطبية",
   "auth": {
     "login": "تسجيل الدخول",
     "loginSuccess": "تم تسجيل الدخول بنجاح",
     "register": "تسجيل حساب جديد",
+    "registerSuccess": "تم تسجيل الحساب بنجاح",
     "logout": "تسجيل الخروج",
     "logoutSuccess": "تم تسجيل الخروج بنجاح",
     "areYouSureYouWantToLogout": "هل أنت متأكد من رغبتك بتسجيل الخروج؟"
@@ -17,9 +16,33 @@
     "about": "من نحن",
     "profile": "الملف الشخصي",
     "editProfile": "تعديل الملف الشخصي",
-    "requests": "الطلبات"
+    "requests": "الطلبات",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfUse": "شروط الاستخدام",
+    "contactUs": "تواصل معنا"
   },
-
+  "footer": {
+    "importantLinks": "روابط مهمة",
+    "copyright": "جميع حقوق النشر محفوظة لـ"
+  },
+  "colors": {
+    "colors": "الألوان"
+  },
+  "units": {
+    "units": "المجموعات"
+  },
+  "categories": {
+    "categories": "الأقسام"
+  },
+  "currencies": {
+    "currencies": "العملات"
+  },
+  "taxes": {
+    "taxes": "الضرائب"
+  },
+  "appTitle": "محمد ضيف",
+  "appSubtitle": "للمستلزمات الطبية",
+  "showAllNotifications": "عرض جميع الاشعارات",
   "somethingWentWrong": "حدث خطأ ما",
   "cancel": "إلغاء"
 }

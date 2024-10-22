@@ -1,0 +1,397 @@
+header {
+  background-color: #fefefe;
+  position: sticky;
+  top: 0;
+  right: 0;
+  gap: 4px;
+  width: 100%;
+  z-index: 1024;
+  transition: $transition;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $inputStroke;
+  padding: 8px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 24px;
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+
+      .logo-img {
+        height: 56px;
+        display: flex;
+        position: relative;
+        padding: 8px 0;
+
+        img {
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .logo-title {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        position: relative;
+
+        span {
+          color: $main;
+          position: relative;
+          line-height: 1;
+
+          &.title {
+            font-size: 18px;
+            font-weight: 800;
+          }
+
+          &.sub-title {
+            font-size: 12px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .navbar-menu {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .nav-item {
+        font-size: 16px;
+        position: relative;
+        padding: 4px 16px;
+        border-radius: 16px;
+        transition: $transition;
+
+        &.active {
+          background-color: $main;
+          color: white;
+        }
+
+        &:hover {
+          &:not(.active) {
+            background-color: $main10;
+            color: $main;
+          }
+        }
+      }
+    }
+
+    .icons-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+
+      .dropdown-icon {
+        &:hover {
+          .count {
+            background-color: $inputBg;
+            color: $main;
+          }
+        }
+        .count {
+          width: 20px;
+          aspect-ratio: 1 / 1;
+          padding: 2px;
+          border-radius: 50%;
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          background-color: $main;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+          transition: $transition;
+          border: 1px solid $main;
+          z-index: 20;
+        }
+      }
+
+      .dropdown {
+        position: relative !important;
+        .dropdown-toggle {
+          background-color: $main10 !important;
+          color: $main !important;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: $transition;
+          border: none;
+          padding: 4px;
+
+          &:hover {
+            background-color: $main !important;
+            color: $white !important;
+
+            img {
+              filter: brightness(0) invert(1);
+            }
+          }
+
+          img {
+            height: 20px !important;
+            object-fit: contain !important;
+            transition: $transition;
+          }
+        }
+        .dropdown-menu {
+          border: none;
+          box-shadow: 0px 2px 8px #0000001a;
+          animation: fadeIn 0.5s;
+          flex-direction: column;
+          border-radius: 12px;
+          border: 1px solid $inputStroke;
+
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+          &.show {
+            display: flex;
+            top: 16px !important;
+          }
+        }
+        .dropdown-item {
+          padding: 8px 16px;
+          font-size: 14px;
+          text-transform: capitalize;
+          text-align: start;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          transition: $transition;
+          &:active {
+            background: none !important;
+          }
+          &:hover {
+            background-color: $main10 !important;
+            color: $main;
+          }
+          img {
+            height: 16px;
+            width: 16px;
+          }
+
+          i {
+            width: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 16px;
+          }
+          a {
+            width: 100%;
+            color: $black;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            &:hover {
+              color: $main;
+            }
+          }
+          &:hover {
+            background: none;
+          }
+        }
+        .dropdown-toggle::after {
+          display: none;
+        }
+        &:has(.text) {
+          .dropdown-menu {
+            flex-wrap: wrap;
+            --bs-dropdown-min-width: 16rem;
+            padding: 8px;
+            gap: 4px;
+            flex-direction: row;
+            border-radius: 16px;
+            p {
+              padding: 8px;
+              color: $textColor;
+              width: 100%;
+              border-radius: 12px;
+              font-weight: bold;
+            }
+            .dropdown-item {
+              border: 1px solid $border;
+              border-radius: 12px;
+              aspect-ratio: 1;
+              width: calc(100% / 2 - 2px);
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 40px;
+                height: 40px;
+                object-fit: contain;
+                transition: $transition;
+              }
+              &:hover {
+                background-color: $main;
+                color: $white;
+                border-color: $main;
+                img {
+                  filter: brightness(0) invert(1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding-top: 60px;
+  position: relative;
+  border-top: 1px solid $inputStroke;
+  background-color: #fefefe;
+  // background-image: url("/images/bg_5.jpg");
+  // background-position: top center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    img {
+      height: 56px;
+      object-fit: contain;
+    }
+
+    .logo-title {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: relative;
+
+      span {
+        color: $main;
+        position: relative;
+        line-height: 1;
+
+        &.title {
+          font-size: 18px;
+          font-weight: 800;
+        }
+
+        &.sub-title {
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .social_media {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 42px;
+    a {
+      width: 40px;
+      height: 40px;
+      @include centerFlex();
+      border: 1px solid $inputStroke;
+      background-color: $main10;
+      color: $main;
+      font-size: 14px;
+      border-radius: 50%;
+      transition: $transition;
+      &:hover {
+        transform: translateY(-4px);
+        background-color: $main;
+        color: $white;
+      }
+    }
+  }
+  .copy_rights {
+    margin-top: 32px;
+    padding: 16px 0;
+    border-top: 1px solid #efefef;
+    @include centerFlex();
+    h6 {
+      font-size: 16x;
+      color: $main;
+    }
+    a {
+      color: $main;
+      transition: $transition;
+      font-size: 16px;
+    }
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+  }
+  .footer_title {
+    color: $main;
+    margin-bottom: 32px;
+    font-size: 28px;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100px;
+      background: radial-gradient(90% 100% at 0% 50%, $main10 0%, $main60 100%);
+      position: absolute;
+      bottom: -12px;
+      right: 0;
+    }
+    @media screen and (max-width: 576px) {
+      margin-top: 32px;
+    }
+  }
+  .footer_links {
+    display: flex;
+    flex-direction: column;
+    .footer_link {
+      min-width: 170px;
+      &:hover {
+        span {
+          width: 16px;
+        }
+      }
+      span {
+        transition: $transition;
+        width: 0;
+        overflow: hidden;
+      }
+    }
+  }
+  .footer_link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: $main;
+    transition: $transition;
+    margin-bottom: 12px;
+  }
+}

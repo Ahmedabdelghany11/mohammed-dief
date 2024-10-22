@@ -90,9 +90,9 @@ function Login({ setFormType, setShow }) {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <div className="mb-4">
-        <h2 className="head">
+        <h2 className="head text-center">
           {t("auth.loginTitle")}{" "}
-          <img src="/images/icons/waving-hand.svg" alt="hand-wave" />
+          {/* <img src="/images/icons/waving-hand.svg" alt="hand-wave" /> */}
         </h2>
         <p className="sub-head">{t("auth.loginSubtitle")}</p>
       </div>
@@ -100,7 +100,7 @@ function Login({ setFormType, setShow }) {
       <InputField
         required
         label={t("auth.userName")}
-        placeholder={t("auth.userNamePlaceHolder")}
+        placeholder={t("writeHere")}
         id="userName"
         name="userName"
         value={formData.userName}

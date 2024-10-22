@@ -42,14 +42,14 @@ export default function AuthModal({ show, setShow, type, protectedFlag }) {
           <i className="fa-regular fa-x"></i>
         </button>
         <section className="auth_section">
-          <div className="img_wrapper">
+          {/* <div className="img_wrapper">
             <img
               loading="lazy"
               className="bg-img"
               alt="auth-banner"
               src="/images/auth-benner.png"
             />
-          </div>
+          </div> */}
           <div className="form_wrapper">
             {formType === "login" && (
               <Login setFormType={setFormType} setShow={setShow} />

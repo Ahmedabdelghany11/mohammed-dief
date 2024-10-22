@@ -6,7 +6,21 @@
     "registerSuccess": "تم تسجيل الحساب بنجاح",
     "logout": "تسجيل الخروج",
     "logoutSuccess": "تم تسجيل الخروج بنجاح",
-    "areYouSureYouWantToLogout": "هل أنت متأكد من رغبتك بتسجيل الخروج؟"
+    "areYouSureYouWantToLogout": "هل أنت متأكد من رغبتك بتسجيل الخروج؟",
+    "userName": "اسم المستخدم",
+    "firstName": "الاسم الأول",
+    "lastName": "الاسم الأخير",
+    "phone": "رقم الهاتف",
+    "email": "البريد الالكتروني",
+    "gmail": "الجيميل",
+    "password": "كلمة المرور",
+    "forgetPassword": "نسيت كلمة المرور",
+    "noAccount": "ليس لديك حساب؟",
+    "haveAccount": "لديك حساب بالفعل؟",
+    "loginTitle": "يسرنا عودتك",
+    "loginSubtitle": "ادخل بياناتك واستمتع بمميزاتك الخاصة",
+    "registerTitle": "أهلًا ومرحبًا",
+    "registerSubtitle": "املأ الحقول ببياناتك الصحيحة واصبح جزء من عائلتنا"
   },
   "navbar": {
     "home": "الرئيسية",
@@ -51,5 +65,7 @@
   "appSubtitle": "للمستلزمات الطبية",
   "showAllNotifications": "عرض جميع الاشعارات",
   "somethingWentWrong": "حدث خطأ ما",
-  "cancel": "إلغاء"
+  "cancel": "إلغاء",
+  "confirm": "تاكيد",
+  "register": "تسجيل"
 }

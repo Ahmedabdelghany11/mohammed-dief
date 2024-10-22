@@ -759,9 +759,6 @@ body .form .verify_image_field {
 body .form .verify_image_field input {
   display: none;
 }
-body .phone-field input {
-  border-radius: 0 12px 12px 0 !important;
-}
 body .phone-field .phone-key {
   color: #000;
   height: 56px;

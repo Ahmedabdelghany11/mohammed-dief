@@ -25,6 +25,21 @@
     "importantLinks": "روابط مهمة",
     "copyright": "All rights reserved for"
   },
+  "colors": {
+    "colors": "Colors"
+  },
+  "units": {
+    "units": "Units"
+  },
+  "categories": {
+    "categories": "Categories"
+  },
+  "currencies": {
+    "currencies": "Currencies"
+  },
+  "taxes": {
+    "taxes": "Taxes"
+  },
   "appTitle": "Mohammed Dief",
   "appSubtitle": "For medical products",
   "showAllNotifications": "Show all notifications",

@@ -25,6 +25,13 @@
     "importantLinks": "روابط مهمة",
     "copyright": "جميع حقوق النشر محفوظة لـ"
   },
+  "product": {
+    "name": "الاسم",
+    "description": "الوصف",
+    "category": "القسم",
+    "color": "اللون",
+    "unit": "المجموعة"
+  },
   "colors": {
     "colors": "الألوان"
   },

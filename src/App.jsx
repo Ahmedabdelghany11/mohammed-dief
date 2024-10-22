@@ -6,6 +6,7 @@ import Home from "./routes/Home";
 import ErrorPage from "./routes/ErrorPage";
 import AppLayout from "./ui/layout/AppLayout";
 import i18n from "./utilities/i18n";
+import Products from "./routes/Products";
 
 // const Home = lazy(() => import("./pages/Home"));
 // <Suspense fallback={<Spinner />}> "before routes"
@@ -32,6 +33,14 @@ function App() {
         element={
           <AppLayout>
             <Home />
+          </AppLayout>
+        }
+      />
+      <Route
+        path="/products"
+        element={
+          <AppLayout>
+            <Products />
           </AppLayout>
         }
       />

@@ -85,9 +85,6 @@ function Header() {
             <NavLink to="/orders" className="nav-item">
               {t("navbar.orders")}
             </NavLink>
-            <NavLink to="/dashboard" className="nav-item">
-              {t("navbar.dashboard")}
-            </NavLink>
             <NavLink to="/about" className="nav-item">
               {t("navbar.about")}
             </NavLink>
@@ -156,6 +153,10 @@ function Header() {
                         <Dropdown.Item as={Link} to="/requests">
                           <i className="fa-solid fa-receipt"></i>
                           {t("navbar.requests")}
+                        </Dropdown.Item>
+                        <Dropdown.Item as={Link} to="/dashboard">
+                          <i className="fa-solid fa-folder"></i>
+                          {t("navbar.dashboard")}
                         </Dropdown.Item>
                       </>
                     ) : null}

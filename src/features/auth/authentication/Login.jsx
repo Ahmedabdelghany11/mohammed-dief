@@ -62,7 +62,7 @@ function Login({ setFormType, setShow }) {
           dispatch(setUser(userDataReq.data?.data?.user));
           dispatch(setIsLogged(true));
           dispatch(setRoles(userDataReq.data?.data?.roles));
-          setCookie("id", userDataReq.data?.data.user.id, {
+          setCookie("token", userDataReq.data?.data.user.id, {
             path: "/",
             secure: import.meta.env.MODE === "production",
             sameSite: "Strict",
@@ -90,7 +90,7 @@ function Login({ setFormType, setShow }) {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <div className="mb-4">
-        <h2 className="head text-center">
+        <h2 className="head">
           {t("auth.loginTitle")}{" "}
           {/* <img src="/images/icons/waving-hand.svg" alt="hand-wave" /> */}
         </h2>

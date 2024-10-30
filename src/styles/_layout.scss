@@ -43,6 +43,7 @@ header {
         flex-direction: column;
         gap: 4px;
         position: relative;
+        white-space: nowrap;
 
         span {
           color: $main;
@@ -68,12 +69,18 @@ header {
       align-items: center;
       gap: 8px;
 
+      @media screen and (max-width: 991px) {
+        display: none;
+      }
+
       .nav-item {
         font-size: 16px;
         position: relative;
         padding: 4px 16px;
         border-radius: 16px;
         transition: $transition;
+        display: flex;
+        align-items: center;
 
         &.active {
           background-color: $main;
@@ -85,6 +92,11 @@ header {
             background-color: $main10;
             color: $main;
           }
+        }
+
+        i {
+          font-size: 14px;
+          display: none;
         }
       }
     }
@@ -371,7 +383,7 @@ footer {
   }
   .footer_links {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     .footer_link {
       min-width: 170px;
       &:hover {
@@ -393,5 +405,45 @@ footer {
     color: $main;
     transition: $transition;
     margin-bottom: 12px;
+  }
+}
+
+.small_menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background: $white;
+  align-items: center;
+  box-shadow: $shadow;
+  display: none;
+  @media screen and (max-width: 991px) {
+    display: flex;
+  }
+  .menu_item {
+    @include centerFlex();
+    flex-direction: column;
+    flex: 1;
+    padding: 16px 12px;
+    gap: 8px;
+    color: $black;
+    font-size: 14px;
+    i {
+      font-size: 16px;
+      color: $main;
+    }
+    .center {
+      width: 42px;
+      height: 42px;
+      background: $main;
+      font-size: 24px;
+      color: $white;
+      @include centerFlex();
+      border-radius: 50%;
+      i {
+        color: $white;
+      }
+    }
   }
 }

@@ -37,7 +37,7 @@ export default function Footer() {
           <div className="col-lg-4 col-12 p-2">
             <h2 className="footer_title">{t("footer.importantLinks")}</h2>
             <ul className="footer_links">
-              <li>
+              <li className="col-6">
                 <Link className="footer_link" to="/products">
                   <span>
                     <i className="fa-solid fa-arrow-right"></i>
@@ -45,7 +45,7 @@ export default function Footer() {
                   {t("navbar.products")}
                 </Link>
               </li>
-              <li>
+              <li className="col-6">
                 <Link className="footer_link" to="/requests">
                   <span>
                     <i className="fa-solid fa-arrow-right"></i>
@@ -53,15 +53,7 @@ export default function Footer() {
                   {t("navbar.requests")}
                 </Link>
               </li>
-              <li>
-                <Link className="footer_link" to="/about">
-                  <span>
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </span>
-                  {t("navbar.about")}
-                </Link>
-              </li>
-              <li>
+              <li className="col-6">
                 <Link className="footer_link" to="/privacy">
                   <span>
                     <i className="fa-solid fa-arrow-right"></i>
@@ -69,12 +61,20 @@ export default function Footer() {
                   {t("navbar.privacyPolicy")}
                 </Link>
               </li>
-              <li>
+              <li className="col-6">
                 <Link className="footer_link" to="/terms">
                   <span>
                     <i className="fa-solid fa-arrow-right"></i>
                   </span>
                   {t("navbar.termsOfUse")}
+                </Link>
+              </li>
+              <li className="col-6">
+                <Link className="footer_link" to="/about">
+                  <span>
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </span>
+                  {t("navbar.about")}
                 </Link>
               </li>
             </ul>

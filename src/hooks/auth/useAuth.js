@@ -42,12 +42,12 @@ function useAuth() {
         dispatch(setUser(userDataReq.data?.data?.user));
         dispatch(setIsLogged(true));
         dispatch(setRoles(userDataReq.data?.data?.roles));
-        setCookie("id", userDataReq.data?.data.user.id, {
-          path: "/",
-          secure: import.meta.env.MODE === "production",
-          sameSite: "Strict",
-          maxAge: 86400, // 1-day expiration for the user ID
-        });
+        // setCookie("id", userDataReq.data?.data.user.id, {
+        //   path: "/",
+        //   secure: import.meta.env.MODE === "production",
+        //   sameSite: "Strict",
+        //   maxAge: 86400, // 1-day expiration for the user ID
+        // });
 
         const updatedParams = new URLSearchParams(searchParams);
         updatedParams.delete("redirect");

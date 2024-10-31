@@ -6,7 +6,29 @@
     "registerSuccess": "Registered successfully",
     "logout": "Logout",
     "logoutSuccess": "Logged out successfully",
-    "areYouSureYouWantToLogout": "Are you sure you want to logout?"
+    "areYouSureYouWantToLogout": "Are you sure you want to logout?",
+    "userName": "Username",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone Number",
+    "email": "Email",
+    "gmail": "Gmail",
+    "password": "Password",
+    "passwordConfirmation": "Password Confirmation",
+    "forgetPassword": "Forget Password",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "loginTitle": "Welcome Back",
+    "loginSubtitle": "Enter your credentials and get started",
+    "registerTitle": "Are you new here?",
+    "registerSubtitle": "Fill in the fields with correct data and become part of our family",
+    "resetPasswordSubtitle": "Enter the email address associated with your account",
+    "resetPasswordTitle": "Forgot password?",
+    "confirmOTPSubtitle": "Please check your email for the activation code",
+    "confirmOTPTitle": "Verify your email",
+    "changePasswordSubtitle": "Enter the new password and make sure to choose a suitable one",
+    "changePasswordTitle": "Change Password",
+    "verify": "Verify"
   },
   "navbar": {
     "home": "Home",
@@ -22,8 +44,15 @@
     "contactUs": "Contact Us"
   },
   "footer": {
-    "importantLinks": "روابط مهمة",
+    "importantLinks": "Important Links",
     "copyright": "All rights reserved for"
+  },
+  "product": {
+    "name": "Name",
+    "description": "Description",
+    "category": "Category",
+    "color": "Color",
+    "unit": "Unit"
   },
   "colors": {
     "colors": "Colors"
@@ -45,5 +74,7 @@
   "showAllNotifications": "Show all notifications",
   "somethingWentWrong": "Something went wrong",
   "cancel": "Cancel",
-  "writeHere": "Write Here"
+  "writeHere": "Write Here",
+  "send": "Send",
+  "save": "Save"
 }

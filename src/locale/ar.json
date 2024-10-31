@@ -14,13 +14,21 @@
     "email": "البريد الالكتروني",
     "gmail": "الجيميل",
     "password": "كلمة المرور",
+    "passwordConfirmation": "تاكيد كلمة المرور",
     "forgetPassword": "نسيت كلمة المرور",
     "noAccount": "ليس لديك حساب؟",
     "haveAccount": "لديك حساب بالفعل؟",
     "loginTitle": "يسرنا عودتك",
     "loginSubtitle": "ادخل بياناتك واستمتع بمميزاتك الخاصة",
-    "registerTitle": "أهلًا ومرحبًا",
-    "registerSubtitle": "املأ الحقول ببياناتك الصحيحة واصبح جزء من عائلتنا"
+    "registerTitle": "هل أنت جديد هنا؟",
+    "registerSubtitle": "املأ الحقول ببياناتك الصحيحة واصبح جزء من عائلتنا",
+    "resetPasswordSubtitle": "ادخل البريد الالكتروني المسجل به حسابك",
+    "resetPasswordTitle": "هل نسيت كلمة المرور؟",
+    "confirmOTPSubtitle": "الرجاء التحقق من بريدك الإلكتروني للحصول على كود التفعيل",
+    "confirmOTPTitle": "التحقق من البريد الالكتروني",
+    "changePasswordSubtitle": "ادخل كلمة المرور الجديدة واحرص على اختيار كلمة مرور مناسبة",
+    "changePasswordTitle": "تغيير كلمة المرور",
+    "verify": "تحقق"
   },
   "navbar": {
     "home": "الرئيسية",
@@ -68,5 +76,7 @@
   "cancel": "إلغاء",
   "confirm": "تاكيد",
   "register": "تسجيل",
-  "writeHere": "اكتب هنا"
+  "writeHere": "اكتب هنا",
+  "send": "إرسال",
+  "save": "حفظ"
 }

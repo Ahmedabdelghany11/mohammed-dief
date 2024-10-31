@@ -72,7 +72,7 @@ function useAuth() {
     if (isExpired) {
       // ||  decodedToken?.uid === id
       dispatch(logout());
-      removeCookie("token");
+      // removeCookie("token");
       removeCookie("id");
       setLoading(false);
       setIsAuthed(false);
